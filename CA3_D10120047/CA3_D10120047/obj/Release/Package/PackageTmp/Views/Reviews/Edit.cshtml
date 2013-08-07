@@ -1,0 +1,53 @@
+﻿@model CA3_D10120047.Models.BusinessReview
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Your Review</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Business Review for </legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rating)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rating)
+            @Html.ValidationMessageFor(model => model.Rating)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReviewerName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReviewerName)
+            @Html.ValidationMessageFor(model => model.ReviewerName)
+        </div>
+        @*This hidden input keeps track of *@
+        @Html.HiddenFor(model => model.BusinessId)
+
+        <p>
+            <input type="submit" value="Save" class ="btn btn-primary btn-large"/>
+        </p>
+    </fieldset>
+}
+
+
+
+@section Scripts {
+    
+}

@@ -1,0 +1,47 @@
+﻿@model IPagedList<BusinessListViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<form method="get" action="@Url.Action("Index")"
+    data-ca3-ajax="true" data-ca3-target="#businessList">
+
+    <input type="search" name="searchTerm" data-ca3-autocomplete="@Url.Action("Autocomplete")"/>
+    <input type="submit" value="Search By Name" class ="btn btn-primary btn-large"/> 
+</form>
+
+
+@Html.Partial("_Business", Model)
+
+<div id="intro">
+    <h3>CA3 assignmnet for Software Development</h3>
+    <h3>Student: D10120047</h3>
+    <h3>Project Features As Specified in CA3 Requirements</h3>
+    
+        <li>Database with three primary Tables:
+            <ul>
+            <li>UserProfile</li>
+            <li>Business</li>
+            <li>BusinessReview</li>
+            </ul>
+        </li>
+        <li>This is ASP.net MVC4 using the Entity Framework Code First convention</li>
+        <li>A RESTfull webservice that returns reviews from database with total number of reviews and average rating</li>
+        <li>Source code is in TFS repository with lecturesit@gmail.com added as a member</li>
+        <li>There are unit tests for home controller and main functionality of reviews</li>
+        <li>Deployed to Windows Azure</li>
+
+        <h3>Other Features</h3>
+        <li>Ajax function to submit form(another RESTfull web service)</li>
+        <li>Ajax function to auto-complete search form</li>
+        <li>pagination of results</li>
+        <li>OAuth using google accounts</li>
+        <li>caching</li>
+        
+        
+                
+             
+</div>

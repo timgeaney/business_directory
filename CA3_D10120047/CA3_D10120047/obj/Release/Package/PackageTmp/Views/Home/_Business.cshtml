@@ -1,0 +1,32 @@
+﻿@model IPagedList<BusinessListViewModel>
+
+
+<div id="businessList">  
+    
+    <div class="pagedList"  data-ca3-target="#businessList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page}),
+        PagedListRenderOptions.MinimalWithItemCountText)
+</div>  
+
+@foreach (var item in Model)
+{
+    <div>   
+        <h4>@item.Name</h4>
+        <div>@item.City, @item.Country</div>
+        
+           
+       <div class ="btn btn-primary btn-large">
+             <td> 
+                @Html.ActionLink("Reviews", "Index", "Reviews", new { id=item.Id }, null)
+             </td>
+        </div>
+
+        <hr />
+    </div>
+    
+    
+    
+}
+
+
+</div>

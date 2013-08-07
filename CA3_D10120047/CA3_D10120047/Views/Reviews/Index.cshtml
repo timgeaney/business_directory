@@ -1,0 +1,30 @@
+﻿@model CA3_D10120047.Models.Business
+
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reviews for @Model.Name</h2>
+
+@Html.Partial("_Reviews", @Model.Reviews)
+
+
+
+<td>
+    Total Number of reviews: <h1>@Model.Reviews.Count()</h1>
+</td>
+    
+<td>
+ @{ var rating = (int)Model.Reviews.Average(b => b.Rating);}
+
+    The average rating is: <h1>@rating</h1>
+</td>
+
+<div class ="btn btn-primary btn-large">
+    <p>
+            @Html.ActionLink("Create New Review", "Create", new { businessId = Model.Id})
+    </p>
+    </div>
